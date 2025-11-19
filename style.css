@@ -23,7 +23,6 @@ body {
     z-index: 0;
 }
 
-
 .navbar {
     position: fixed;
     top: 0;
@@ -48,8 +47,8 @@ body {
 }
 
 @keyframes glowPulse {
-    0%   { text-shadow: 0 0 10px #ff3c00; opacity: 0.9; }
-    50%  { text-shadow: 0 0 25px #ff6a00; opacity: 1; }
+    0% { text-shadow: 0 0 10px #ff3c00; opacity: 0.9; }
+    50% { text-shadow: 0 0 25px #ff6a00; opacity: 1; }
     100% { text-shadow: 0 0 10px #ff3c00; opacity: 0.9; }
 }
 
@@ -72,7 +71,6 @@ body {
     opacity: 0.6;
 }
 
-
 .burger {
     display: none;
     flex-direction: column;
@@ -90,7 +88,6 @@ body {
     transition: all 0.3s ease;
 }
 
-
 .burger.toggle div:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
@@ -103,22 +100,19 @@ body {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-
 .hero {
-    position: relative;
-    z-index: 2;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 12vh 5%;
     min-height: 100vh;
-    padding-top: 12vh;
-    text-align: center;
 }
 
 .left {
-    flex: 1 1 100%;
+    flex: 1 1 50%;
     max-width: 600px;
+    text-align: left;
 }
 
 .left h1 {
@@ -147,10 +141,9 @@ body {
 }
 
 .right {
-    flex: 1 1 100%;
+    flex: 1 1 50%;
     display: flex;
-    justify-content: center;
-    margin-top: 2rem;
+    justify-content: flex-end;
 }
 
 .right img.bslogo {
@@ -158,7 +151,6 @@ body {
     filter: drop-shadow(0 0 18px #ff3c00);
     animation: glowPulse 2.5s infinite;
 }
-
 
 .about {
     padding: 80px 20px;
@@ -170,7 +162,6 @@ body {
 .about h2 {
     font-size: 36px;
 }
-
 
 .features {
     padding: 80px 20px;
@@ -199,7 +190,6 @@ body {
     transition: all 0.3s ease;
 }
 
-
 .cta {
     padding: 80px 20px;
     background: #b8481e;
@@ -207,14 +197,12 @@ body {
     color: white;
 }
 
-
 footer {
     background: black;
     color: white;
     text-align: center;
     padding: 25px;
 }
-
 
 @media (max-width: 1024px) {
     .navbar {
@@ -256,6 +244,16 @@ footer {
 
     .hero {
         flex-direction: column;
+        text-align: center;
+    }
+
+    .left {
+        text-align: center;
+    }
+
+    .right {
+        justify-content: center;
+        margin-top: 2rem;
     }
 
     .left h1 {
@@ -269,7 +267,6 @@ footer {
 
     .right img.bslogo {
         width: clamp(120px, 50vw, 250px);
-        margin-top: 1.5rem;
     }
 }
 
