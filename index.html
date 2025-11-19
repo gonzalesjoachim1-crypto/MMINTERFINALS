@@ -6,11 +6,9 @@
     <title>Backstage</title>
     <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-    
-    <nav class="navbar">
+    <nav class="navbar" role="navigation">
         <div class="nav-left glow-logo">BACKSTAGE</div>
 
         <ul class="nav-links">
@@ -20,14 +18,11 @@
             <li><a href="#cta">Get Started</a></li>
         </ul>
 
-        <div class="burger" onclick="toggleMenu()">
+        <div class="burger" onclick="toggleMenu()" aria-label="Toggle menu">
             <div></div><div></div><div></div>
         </div>
     </nav>
 
-    <div class="overlay"></div>
-
-    
     <section class="hero" id="hero">
         <div class="left">
             <h1>IT’S YOUR TURN</h1>
@@ -39,7 +34,6 @@
         </div>
     </section>
 
-    
     <section class="about" id="about">
         <h2>About Backstage</h2>
         <p>
@@ -49,7 +43,6 @@
         </p>
     </section>
 
-    
     <section class="features" id="features">
         <h2>Why Join?</h2>
 
@@ -76,22 +69,20 @@
         </div>
     </section>
 
-    
     <section class="cta" id="cta">
         <h2>Ready to Go Backstage?</h2>
         <a href="#" class="btn">Join Now</a>
     </section>
 
-    
     <footer>
         © 2025 Backstage. All Rights Reserved.
     </footer>
 
     <script>
         function toggleMenu() {
-            document.querySelector(".nav-links").classList.toggle("nav-active");
+            const nav = document.querySelector(".nav-links");
+            nav.classList.toggle("nav-active");
         }
     </script>
-
 </body>
 </html>
