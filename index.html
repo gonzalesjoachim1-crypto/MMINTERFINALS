@@ -4,22 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    
     <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&display=swap" rel="stylesheet">
-
-    
     <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap" rel="stylesheet">
-
-    
     <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&display=swap" rel="stylesheet">
 
-    
     <link rel="stylesheet" href="style.css" />
-
     <title>Backstage</title>
 </head>
 <body>
@@ -27,14 +19,26 @@
     <div class="overlay"></div>
 
     
-    <header class="logo font-bartle">BACKSTAGE</header>
+    <nav class="navbar font-bartle">
+        <div class="nav-left">BACKSTAGE</div>
+        <ul class="nav-links">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#features">FEATURES</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
 
+       
+        <div class="burger">
+            <div></div><div></div><div></div>
+        </div>
+    </nav>
+
+    
     <section class="hero">
         <div class="left">
             <h1>It's your<br>turn.</h1>
-
-            
-            <a class="btn font-bogle" href="#">HOME</a>
+            <a class="btn font-bogle" href="#">ENTER</a>
         </div>
 
         <div class="right">
@@ -42,6 +46,58 @@
         </div>
     </section>
 
+   
+    <section id="about" class="about">
+        <h2>What is Backstage?</h2>
+        <p>
+            Backstage is a platform designed to give creators, performers, and dreamers 
+            the opportunity to shine. Whether you're starting your journey or taking the 
+            next big step, Backstage gives you the tools to move forward.
+        </p>
+    </section>
+
+    
+    <section id="features" class="features">
+        <h2>Why Choose Us?</h2>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>🎤 Audition Access</h3>
+                <p>Discover auditions and casting calls tailored to your talent.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>📸 Build Your Profile</h3>
+                <p>Create a professional portfolio that gets attention.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>⭐ Get Discovered</h3>
+                <p>Let industry professionals find you effortlessly.</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="cta">
+        <h2>Ready to take the stage?</h2>
+        <a class="btn font-bogle" href="#">Join Backstage</a>
+    </section>
+
+    
+    <footer id="contact">
+        <p>© 2025 BACKSTAGE — All rights reserved.</p>
+    </footer>
+
+    <script>
+        
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+        });
+    </script>
+
 </body>
 </html>
-
