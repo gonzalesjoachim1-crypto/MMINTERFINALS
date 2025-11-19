@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&display=swap');
 
 body {
     margin: 0;
@@ -31,6 +33,7 @@ body {
 }
 
 .left h1 {
+    font-family: "BBH Sans Bartle", sans-serif;
     font-size: clamp(28px, 8vw, 60px);
     font-weight: 900;
     line-height: 1.2;
@@ -54,10 +57,6 @@ body {
 
 .btn:hover { transform: scale(1.05); }
 
-@keyframes heroFade {
-    to { opacity: 1; transform: translateY(0); }
-}
-
 .right {
     flex: 1 1 50%;
     display: flex;
@@ -70,6 +69,10 @@ body {
 .right img.bslogo {
     width: clamp(150px, 40vw, 300px);
     filter: drop-shadow(0 0 18px #ff3c00);
+}
+
+@keyframes heroFade {
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .navbar {
@@ -103,10 +106,10 @@ body {
 .burger.toggle div:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
 
 .about { padding: 80px 20px; background: #111; color: white; text-align: center; }
-.about h2 { font-size: 36px; }
+.about h2 { font-family: "BBH Sans Bartle", sans-serif; font-size: 36px; }
 
 .djs-section { padding: 80px 20px; background: #1a1a1a; color: white; text-align: center; }
-.djs-section h2 { font-size: 36px; margin-bottom: 40px; }
+.djs-section h2 { font-family: "BBH Sans Bartle", sans-serif; font-size: 36px; margin-bottom: 40px; }
 .dj-grid {
     display: grid;
     max-width: 1100px;
@@ -121,6 +124,7 @@ body {
     transition: 0.5s; 
     opacity: 0; 
     transform: translateY(20px); 
+    font-family: "BBH Sans Bogle", sans-serif;
 }
 .dj-card.visible { 
     opacity: 1; 
