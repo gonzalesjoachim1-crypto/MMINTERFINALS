@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&display=swap');
@@ -24,13 +23,14 @@ body {
     z-index: 0;
 }
 
+
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
     background: black;
     color: white;
-    padding: 18px 60px;
+    padding: 12px 40px; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -39,7 +39,7 @@ body {
 }
 
 .glow-logo {
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 900;
     letter-spacing: 3px;
     text-shadow: 0 0 10px #ff3c00, 0 0 20px #ff3c00, 0 0 30px #ff3c00;
@@ -54,14 +54,14 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 35px;
+    gap: 25px; 
     list-style: none;
 }
 
 .nav-links a {
     text-decoration: none;
     color: white;
-    font-size: 18px;
+    font-size: 16px; 
     transition: 0.3s;
 }
 
@@ -80,7 +80,6 @@ body {
     width: 28px;
     height: 3px;
     background: white;
-    transition: all 0.3s ease;
 }
 
 
@@ -88,59 +87,72 @@ body {
     position: relative;
     z-index: 2;
     display: flex;
-    min-height: 100vh;
-    padding-top: 12vh;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    min-height: 100vh;
+    padding-top: 12vh;
     text-align: center;
 }
 
+.left {
+    flex: 1 1 100%;
+    max-width: 600px;
+}
+
 .left h1 {
-    font-size: clamp(36px, 12vw, 110px);
+    font-size: clamp(28px, 8vw, 60px); 
     font-weight: 900;
     color: white;
     margin: 0;
+    line-height: 1.2;
 }
 
 .btn {
     display: inline-block;
-    margin-top: 3vh;
-    padding: 15px 50px;
+    margin-top: 2rem;
+    padding: 12px 35px; 
     background: #b8481e;
     color: white;
     text-decoration: none;
     font-weight: bold;
     border-radius: 40px;
-    font-size: 20px;
+    font-size: 18px;
     transition: 0.3s;
 }
 
 .btn:hover {
-    transform: scale(1.08);
+    transform: scale(1.05);
+}
+
+.right {
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
 }
 
 .right img.bslogo {
-    width: clamp(200px, 30vw, 420px);
+    width: clamp(150px, 40vw, 300px);
     filter: drop-shadow(0 0 18px #ff3c00);
     animation: glowPulse 2.5s infinite;
 }
 
 
 .about {
-    padding: 120px 20px;
+    padding: 80px 20px;
     background: #111;
     color: white;
     text-align: center;
 }
 
 .about h2 {
-    font-size: 42px;
+    font-size: 36px;
 }
 
 
 .features {
-    padding: 120px 20px;
+    padding: 80px 20px;
     background: #1a1a1a;
     color: white;
     text-align: center;
@@ -160,9 +172,15 @@ body {
     border-radius: 20px;
 }
 
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: #333;
+    transition: all 0.3s ease;
+}
+
 
 .cta {
-    padding: 120px 20px;
+    padding: 80px 20px;
     background: #b8481e;
     text-align: center;
     color: white;
@@ -179,13 +197,17 @@ footer {
 
 @media (max-width: 1024px) {
     .navbar {
-        padding: 18px 40px;
+        padding: 12px 30px;
+    }
+
+    .nav-links a {
+        font-size: 15px;
     }
 }
 
 @media (max-width: 768px) {
     .navbar {
-        padding: 18px 25px;
+        padding: 12px 20px;
     }
 
     .nav-links {
@@ -193,7 +215,7 @@ footer {
         top: 0;
         right: 0;
         height: 100%;
-        width: 60%;
+        width: 70%;
         background: black;
         flex-direction: column;
         align-items: center;
@@ -213,11 +235,21 @@ footer {
     }
 
     .hero {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
     .left h1 {
-        font-size: clamp(28px, 10vw, 80px);
+        font-size: clamp(24px, 7vw, 50px); 
+    }
+
+    .btn {
+        padding: 10px 30px;
+        font-size: 16px;
+    }
+
+    .right img.bslogo {
+        width: clamp(120px, 50vw, 250px);
+        margin-top: 1.5rem;
     }
 }
 
@@ -227,25 +259,19 @@ footer {
     }
 
     .left h1 {
-        font-size: clamp(24px, 8vw, 60px);
+        font-size: clamp(20px, 6vw, 42px);
     }
 
     .btn {
-        padding: 12px 35px;
-        font-size: 18px;
+        padding: 8px 25px;
+        font-size: 14px;
     }
 
     .right img.bslogo {
-        width: clamp(150px, 40vw, 300px);
+        width: clamp(100px, 60vw, 200px);
     }
 }
 
-
-.feature-card:hover {
-    transform: translateY(-5px);
-    background: #333;
-    transition: all 0.3s ease;
-}
 
  
 
