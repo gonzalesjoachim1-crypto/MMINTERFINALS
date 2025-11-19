@@ -3,7 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&display=swap');
 
-
 body {
     margin: 0;
     padding: 0;
@@ -16,7 +15,6 @@ body {
     min-height: 100vh;
 }
 
-
 .overlay {
     position: fixed;
     top: 0; left: 0;
@@ -25,7 +23,6 @@ body {
     background: rgba(0,0,0,0.25);
     z-index: 0;
 }
-
 
 .navbar {
     position: fixed;
@@ -41,7 +38,6 @@ body {
     border-bottom: 2px solid #222;
 }
 
-
 .glow-logo {
     font-size: 30px;
     font-weight: 900;
@@ -55,7 +51,6 @@ body {
     50%  { text-shadow: 0 0 25px #ff6a00; opacity: 1; }
     100% { text-shadow: 0 0 10px #ff3c00; opacity: 0.9; }
 }
-
 
 .nav-links {
     display: flex;
@@ -74,7 +69,6 @@ body {
     opacity: 0.6;
 }
 
-
 .burger {
     display: none;
     flex-direction: column;
@@ -86,6 +80,7 @@ body {
     width: 28px;
     height: 3px;
     background: white;
+    transition: all 0.3s ease;
 }
 
 
@@ -182,40 +177,74 @@ footer {
 }
 
 
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 18px 40px;
+    }
+}
 
 @media (max-width: 768px) {
-
     .navbar {
         padding: 18px 25px;
     }
 
     .nav-links {
-        position: absolute;
+        position: fixed;
+        top: 0;
         right: 0;
-        top: 70px;
-        width: 200px;
-        flex-direction: column;
-        padding: 20px;
+        height: 100%;
+        width: 60%;
         background: black;
-        display: none;
-        border-left: 2px solid #222;
-        border-bottom: 2px solid #222;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 19;
     }
 
-    .nav-active {
-        display: flex;
+    .nav-links.nav-active {
+        transform: translateX(0);
     }
 
     .burger {
         display: flex;
     }
+
+    .hero {
+        flex-direction: column-reverse;
+    }
+
+    .left h1 {
+        font-size: clamp(28px, 10vw, 80px);
+    }
 }
 
-@media (max-width: 360px) {
-    .left h1 {
-        font-size: 32px;
-        line-height: 1.1;
+@media (max-width: 480px) {
+    .nav-links {
+        width: 80%;
     }
+
+    .left h1 {
+        font-size: clamp(24px, 8vw, 60px);
+    }
+
+    .btn {
+        padding: 12px 35px;
+        font-size: 18px;
+    }
+
+    .right img.bslogo {
+        width: clamp(150px, 40vw, 300px);
+    }
+}
+
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: #333;
+    transition: all 0.3s ease;
 }
 
  
