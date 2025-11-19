@@ -14,8 +14,7 @@
         <ul class="nav-links">
             <li><a href="#hero">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#djs">DJs</a></li>
-            
+            <li><a href="#djs-section" id="djs-tab">DJs</a></li>
         </ul>
 
         <div class="burger" aria-label="Toggle menu">
@@ -38,32 +37,13 @@
     <section class="about" id="about">
         <h2>About Backstage</h2>
         <p>
-            Backstage is your gateway to exclusive content, real-time updates,
-            and the ultimate immersive experience. Step behind the curtain —
-            this is your moment.
+            Backstage is a platform for DJs to showcase their mixes, connect with audiences, and land gigs. It’s a space that celebrates DJ culture, helping artists grow, collaborate, and get noticed.
         </p>
     </section>
 
-    <section class="djs" id="djs">
-        <h2>DJs</h2>
-        <div class="dj-grid">
-            <div class="dj-card">
-                <h3>DJ Gonza</h3>
-                <p>Gonza is a versatile DJ with a talent for setting the perfect vibe. Known for his smooth transitions and feel for the crowd, he brings energy and emotion to every set.</p>
-            </div>
-            <div class="dj-card">
-                <h3>DJ Riell</h3>
-                <p>DJ Riell is a beginner DJ who is finding his way thru the music industry, his performances are top notch and some would even say he is the next Steve Aoki.</p>
-            </div>
-            <div class="dj-card">
-                <h3>DJ Gerald</h3>
-                <p>Born with talent, DJ Gerald started off as a guitarist until eventually swtiching to the turntables. His knowledge of music truly helps him connect with his crowd.</p>
-            </div>
-            <div class="dj-card">
-                <h3>DJ Julia</h3>
-                <p>DJ Julia, known not only for her beats, but also for her beauty. Winning the hearts of the crowd on and off the stage, she shines thru with a smile that can lighten up her perfomance more.</p>
-            </div>
-        </div>
+    <section class="djs-section" id="djs-section">
+        <h2>Our DJs</h2>
+        <div class="dj-grid" id="dj-grid"></div>
     </section>
 
     <section class="cta" id="cta">
@@ -90,9 +70,44 @@
             burger.classList.remove('toggle');
         });
     });
+
+    const djs = [
+        {
+            name: "DJ Gonza",
+            testimonial: "Gonza is a versatile DJ with a talent for setting the perfect vibe. Known for his smooth transitions and feel for the crowd, he brings energy and emotion to every set."
+        },
+        {
+            name: "DJ Julia",
+            testimonial: "DJ Julia, known not only for her beats, but also for her beauty. Winning the hearts of the crowd on and off the stage, she shines thru with a smile that can lighten up her performance more."
+        },
+        {
+            name: "DJ Azrael",
+            testimonial: "Born with talent, DJ Azrael started off as a guitarist until eventually switching to the turntables. His knowledge of music truly helps him connect with his crowd."
+        },
+        {
+            name: "DJ Cleo",
+            testimonial: "DJ Cleo is a beginner DJ who is finding her way thru the music industry, her performances are top notch and some would even say she is the next Steve Aoki."
+        }
+    ];
+
+    const djTab = document.getElementById('djs-tab');
+    const djGrid = document.getElementById('dj-grid');
+
+    djTab.addEventListener('click', (e) => {
+        e.preventDefault();
+        djGrid.innerHTML = '';
+        djs.slice(0,3).forEach(dj => {
+            const djCard = document.createElement('div');
+            djCard.classList.add('dj-card');
+            djCard.innerHTML = `<h3>${dj.name}</h3><p>${dj.testimonial}</p>`;
+            djGrid.appendChild(djCard);
+        });
+        document.getElementById('djs-section').scrollIntoView({ behavior: 'smooth' });
+    });
     </script>
 
 </body>
 </html>
+
 
 
