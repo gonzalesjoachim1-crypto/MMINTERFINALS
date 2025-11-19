@@ -14,7 +14,7 @@
         <ul class="nav-links">
             <li><a href="#hero">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#djs-section" id="djs-tab">DJs</a></li>
+            <li><a href="#djs-section">DJs</a></li>
         </ul>
 
         <div class="burger" aria-label="Toggle menu">
@@ -37,7 +37,9 @@
     <section class="about" id="about">
         <h2>About Backstage</h2>
         <p>
-            Backstage is a platform for DJs to showcase their mixes, connect with audiences, and land gigs. It’s a space that celebrates DJ culture, helping artists grow, collaborate, and get noticed.
+            Backstage is your gateway to exclusive content, real-time updates,
+            and the ultimate immersive experience. Step behind the curtain —
+            this is your moment.
         </p>
     </section>
 
@@ -90,24 +92,24 @@
         }
     ];
 
-    const djTab = document.getElementById('djs-tab');
     const djGrid = document.getElementById('dj-grid');
 
-    djTab.addEventListener('click', (e) => {
-        e.preventDefault();
+    function renderDJs() {
         djGrid.innerHTML = '';
-        djs.slice(0,3).forEach(dj => {
+        djs.forEach(dj => {
             const djCard = document.createElement('div');
             djCard.classList.add('dj-card');
             djCard.innerHTML = `<h3>${dj.name}</h3><p>${dj.testimonial}</p>`;
             djGrid.appendChild(djCard);
         });
-        document.getElementById('djs-section').scrollIntoView({ behavior: 'smooth' });
-    });
+    }
+
+    renderDJs();
     </script>
 
 </body>
 </html>
+
 
 
 
