@@ -6,98 +6,40 @@ body {
     margin: 0;
     padding: 0;
     font-family: "BBH Sans Hegarty", sans-serif;
-    overflow-x: hidden;
     scroll-behavior: smooth;
-}
-
-.hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12vh 5%;
-    min-height: 100vh;
-    background-image: url('MAINCOVER_desktop.jpg');
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-}
-
-.left {
-    flex: 1 1 50%;
-    max-width: 600px;
-    color: white;
-    text-align: left;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: heroFade 1s forwards 0.3s;
-}
-
-.left h1 {
-    font-family: "BBH Sans Bartle", sans-serif;
-    font-size: clamp(28px, 8vw, 60px);
-    font-weight: 900;
-    line-height: 1.2;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 1.5rem;
-    padding: 10px 35px;
-    background: #b8481e;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 40px;
-    font-size: 16px;
-    transition: 0.3s;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: heroFade 1s forwards 0.6s;
-}
-
-.btn:hover { transform: scale(1.05); }
-
-.right {
-    flex: 1 1 50%;
-    display: flex;
-    justify-content: flex-end;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: heroFade 1s forwards 0.9s;
-}
-
-.right img.bslogo {
-    width: clamp(150px, 40vw, 300px);
-    filter: drop-shadow(0 0 18px #ff3c00);
-}
-
-@keyframes heroFade {
-    to { opacity: 1; transform: translateY(0); }
 }
 
 .navbar {
     position: fixed;
-    top: 0;
     width: 100%;
-    background: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: black;
     padding: 12px 40px;
-    z-index: 20;
+    z-index: 100;
     border-bottom: 2px solid #222;
 }
 
 .glow-logo {
     font-size: 28px;
     font-weight: 900;
-    letter-spacing: 3px;
+    color: white;
     text-shadow: 0 0 10px #ff3c00;
 }
 
-.nav-links { display: flex; gap: 25px; list-style: none; }
-.nav-links a { text-decoration: none; color: white; font-size: 16px; }
-.nav-links a:hover { opacity: 0.6; }
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+.nav-links a:hover { opacity: 0.7; }
 
 .burger {
     display: none;
@@ -108,66 +50,80 @@ body {
     cursor: pointer;
 }
 
-.burger span {
-    display: block;
-    width: 100%;
+.burger div {
     height: 3px;
     background: white;
     border-radius: 2px;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
-.burger.toggle span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
-.burger.toggle span:nth-child(2) { opacity: 0; }
-.burger.toggle span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+.burger.toggle .line1 { transform: rotate(45deg) translate(5px,5px); }
+.burger.toggle .line2 { opacity: 0; }
+.burger.toggle .line3 { transform: rotate(-45deg) translate(5px,-5px); }
 
-.about { padding: 80px 20px; background: #111; color: white; text-align: center; }
-.about h2 { font-family: "BBH Sans Bartle", sans-serif; font-size: 36px; }
-
-.djs-section { padding: 80px 20px; background: #1a1a1a; color: white; text-align: center; }
-.djs-section h2 { font-family: "BBH Sans Bartle", sans-serif; font-size: 36px; margin-bottom: 40px; }
-.dj-grid {
-    display: grid;
-    max-width: 1100px;
-    margin: auto;
-    gap: 25px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12vh 5%;
+    min-height: 100vh;
+    background-image: url('MAINCOVER_desktop.jpg');
+    background-size: cover;
+    background-position: center;
 }
+
+.left { flex: 1; max-width: 600px; color: white; text-align: left; }
+.left h1 { font-size: clamp(28px, 8vw, 60px); font-weight: 900; }
+.btn { display: inline-block; margin-top: 1.5rem; padding: 10px 35px; background: #b8481e; color: white; border-radius: 40px; text-decoration: none; font-weight: bold; }
+.right { flex: 1; display: flex; justify-content: flex-end; }
+.right img { width: clamp(150px, 40vw, 300px); filter: drop-shadow(0 0 18px #ff3c00); }
+
+.about, .djs-section, .cta { padding: 80px 20px; text-align: center; }
+.about { background: #111; color: white; }
+.djs-section { background: #1a1a1a; color: white; }
+.dj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 25px; max-width: 1100px; margin: auto; }
+
 .dj-card { 
     background: #222; 
     padding: 30px; 
     border-radius: 20px; 
-    transition: 0.5s; 
     opacity: 0; 
     transform: translateY(20px); 
+    transition: 0.5s, box-shadow 0.3s ease-in-out; 
     font-family: "BBH Sans Bogle", sans-serif;
 }
+
 .dj-card.visible { 
     opacity: 1; 
     transform: translateY(0); 
+    color: white; 
 }
 
-.cta { padding: 80px 20px; background: #b8481e; text-align: center; color: white; }
+.dj-card:hover {
+    box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.7); /* red glow */
+    transform: translateY(-5px) scale(1.03);
+}
 
+.cta { background: #b8481e; color: white; }
 footer { background: black; color: white; text-align: center; padding: 25px; }
-footer a { color: #b8481e; text-decoration: none; }
-footer a:hover { text-decoration: underline; }
 
-@media (max-width: 768px) {
+@media (max-width:768px){
     .burger { display: flex; }
-    .nav-links { 
-        position: fixed; top: 0; right: 0; height: 100%; width: 70%; 
-        flex-direction: column; align-items: center; justify-content: center;
-        background: black; transform: translateX(100%); transition: transform 0.3s;
+    .nav-links {
+        position: fixed;
+        right: 0; top: 0; height: 100%;
+        flex-direction: column; background: black;
+        transform: translateX(100%); transition: transform 0.3s;
+        width: 70%; justify-content: center; align-items: center;
+        gap: 30px;
     }
     .nav-links.nav-active { transform: translateX(0); }
-    .hero { flex-direction: column; text-align: center; background-image: url('MAINCOVER_mobile.jpg'); background-size: cover; background-position: center top; }
+    .hero { flex-direction: column; text-align: center; }
     .left { text-align: center; }
     .right { justify-content: center; margin-top: 2rem; }
-    .left h1 { font-size: clamp(24px, 7vw, 50px); }
-    .btn { padding: 8px 25px; font-size: 14px; }
-    .right img.bslogo { width: clamp(120px, 50vw, 250px); }
+    .btn { padding: 8px 25px; }
 }
+
 
 
 
