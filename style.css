@@ -4,340 +4,229 @@
 @import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&display=swap');
 
 
-.font-bartle {
-  font-family: "BBH Sans Bartle", sans-serif;
-}
-
-.font-bogle {
-  font-family: "BBH Sans Bogle", sans-serif;
-}
-
-
 body {
-  margin: 0;
-  padding: 0;
-  font-family: "BBH Sans Hegarty", sans-serif;
-  min-height: 100vh;
-  position: relative;
-
-  background-image: url('MAINCOVER.jpg');
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: "BBH Sans Hegarty", sans-serif;
+    background-image: url('MAINCOVER.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    min-height: 100vh;
 }
 
 
 .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3);
-  pointer-events: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.25);
+    z-index: 0;
 }
 
 
 .navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 20px 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 10;
-  color: white;
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(4px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: black;
+    color: white;
+    padding: 18px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 20;
+    border-bottom: 2px solid #222;
 }
 
-.nav-left {
-  font-size: clamp(22px, 3vw, 30px);
-  font-weight: 900;
-  letter-spacing: 3px;
+
+.glow-logo {
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px #ff3c00, 0 0 20px #ff3c00, 0 0 30px #ff3c00;
+    animation: glowPulse 2.5s infinite ease-in-out;
 }
+
+@keyframes glowPulse {
+    0%   { text-shadow: 0 0 10px #ff3c00; opacity: 0.9; }
+    50%  { text-shadow: 0 0 25px #ff6a00; opacity: 1; }
+    100% { text-shadow: 0 0 10px #ff3c00; opacity: 0.9; }
+}
+
 
 .nav-links {
-  display: flex;
-  gap: 35px;
-  list-style: none;
+    display: flex;
+    gap: 35px;
+    list-style: none;
 }
 
 .nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  transition: 0.3s;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
 }
 
 .nav-links a:hover {
-  opacity: 0.7;
+    opacity: 0.6;
 }
 
 
 .burger {
-  display: none;
-  flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
 }
 
 .burger div {
-  width: 28px;
-  height: 3px;
-  background: white;
-  border-radius: 3px;
+    width: 28px;
+    height: 3px;
+    background: white;
 }
 
 
 .hero {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 0 5vw;
-  z-index: 2;
-  text-align: center;
-}
-
-
-.left {
-  flex: 1 1 300px;
-  min-width: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 1rem;
-  height: 100%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    min-height: 100vh;
+    padding-top: 12vh;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
 .left h1 {
-  font-size: clamp(36px, 12vw, 110px);
-  color: white;
-  font-weight: 900;
-  line-height: 1.0;
-  margin: 0;
+    font-size: clamp(36px, 12vw, 110px);
+    font-weight: 900;
+    color: white;
+    margin: 0;
 }
 
-
 .btn {
-  display: inline-block;
-  margin-top: 3vh;
-  padding: clamp(10px, 1.5vw, 18px) clamp(30px, 4vw, 60px);
-  background: #b8481e;
-  color: white;
-  font-size: clamp(14px, 2vw, 20px);
-  font-weight: 700;
-  text-decoration: none;
-  border-radius: 40px;
-  transition: 0.3s;
+    display: inline-block;
+    margin-top: 3vh;
+    padding: 15px 50px;
+    background: #b8481e;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 40px;
+    font-size: 20px;
+    transition: 0.3s;
 }
 
 .btn:hover {
-  transform: scale(1.08);
+    transform: scale(1.08);
 }
 
-
-.right {
-  flex: 1 1 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 250px;
-  margin-top: 20px;
-  padding: 0 1rem;
-}
-
-.bslogo {
-  width: clamp(200px, 30vw, 420px);
-  border-radius: 30px;
-  max-width: 100%;
-  height: auto;
+.right img.bslogo {
+    width: clamp(200px, 30vw, 420px);
+    filter: drop-shadow(0 0 18px #ff3c00);
+    animation: glowPulse 2.5s infinite;
 }
 
 
 .about {
-  text-align: center;
-  padding: 120px 20px;
-  background: #111;
-  color: white;
+    padding: 120px 20px;
+    background: #111;
+    color: white;
+    text-align: center;
 }
 
 .about h2 {
-  font-size: 42px;
-  margin-bottom: 20px;
-}
-
-.about p {
-  max-width: 700px;
-  margin: auto;
-  line-height: 1.7;
-  font-size: 18px;
+    font-size: 42px;
 }
 
 
 .features {
-  padding: 120px 20px;
-  background: #1b1b1b;
-  text-align: center;
-  color: white;
-}
-
-.features h2 {
-  font-size: 42px;
-  margin-bottom: 40px;
+    padding: 120px 20px;
+    background: #1a1a1a;
+    color: white;
+    text-align: center;
 }
 
 .feature-grid {
-  display: grid;
-  gap: 25px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  max-width: 1100px;
-  margin: auto;
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .feature-card {
-  padding: 30px;
-  background: #222;
-  border-radius: 20px;
-}
-
-.feature-card h3 {
-  margin-bottom: 10px;
+    background: #222;
+    padding: 30px;
+    border-radius: 20px;
 }
 
 
 .cta {
-  padding: 120px 20px;
-  background: #b8481e;
-  text-align: center;
-  color: white;
-}
-
-.cta h2 {
-  font-size: 42px;
-  margin-bottom: 25px;
+    padding: 120px 20px;
+    background: #b8481e;
+    text-align: center;
+    color: white;
 }
 
 
 footer {
-  background: black;
-  text-align: center;
-  padding: 30px;
-  color: white;
-  font-size: 16px;
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 25px;
 }
 
 
-
-@media (max-width: 1024px) {
-  body {
-    background-position: center 10%;
-  }
-}
 
 @media (max-width: 768px) {
 
-  .navbar {
-    padding: 20px 25px;
-  }
+    .navbar {
+        padding: 18px 25px;
+    }
 
-  .nav-links {
-    position: absolute;
-    top: 80px;
-    right: 0;
-    background: rgba(0,0,0,0.9);
-    flex-direction: column;
-    padding: 20px;
-    width: 200px;
-    display: none;
-  }
+    .nav-links {
+        position: absolute;
+        right: 0;
+        top: 70px;
+        width: 200px;
+        flex-direction: column;
+        padding: 20px;
+        background: black;
+        display: none;
+        border-left: 2px solid #222;
+        border-bottom: 2px solid #222;
+    }
 
-  .nav-links.nav-active {
-    display: flex;
-  }
+    .nav-active {
+        display: flex;
+    }
 
-  .burger {
-    display: flex;
-  }
-
-  .hero {
-    flex-direction: column;
-    padding: 0 1.5rem;
-    text-align: center;
-  }
-
-  .left {
-    height: auto;
-    margin-top: 10vh;
-  }
-
-  body {
-    background-position: center 20%;
-  }
+    .burger {
+        display: flex;
+    }
 }
-
-@media (max-width: 480px) {
-  .left h1 {
-    font-size: clamp(28px, 10vw, 50px);
-  }
-
-  .btn {
-    padding: 10px 25px;
-    font-size: clamp(12px, 4vw, 16px);
-  }
-
-  .bslogo {
-    width: clamp(150px, 40vw, 200px);
-  }
-
-  body {
-    background-position: center 30%;
-  }
-}
-
 
 @media (max-width: 360px) {
-
-  body, .hero, .left, .right {
-    overflow-x: hidden;
-  }
-
-  .navbar {
-    padding: 15px 20px;
-  }
-
-  .hero {
-    padding: 0 0.5rem;
-  }
-
-  .left {
-    padding: 0 0.5rem;
-    margin-top: 8vh;
-  }
-
-  .left h1 {
-    font-size: clamp(24px, 10vw, 40px);
-    line-height: 1.1;
-  }
-
-  .btn {
-    padding: 8px 20px;
-    font-size: 12px;
-  }
-
-  .bslogo {
-    width: clamp(120px, 35vw, 180px);
-  }
+    .left h1 {
+        font-size: 32px;
+        line-height: 1.1;
+    }
 }
 
+ 
+
+  
 
 
 
  
+
+
+    
+ 
+
