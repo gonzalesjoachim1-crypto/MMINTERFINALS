@@ -1,3 +1,6 @@
+
+
+
 @import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&display=swap');
@@ -199,6 +202,15 @@ footer {
     padding: 25px;
 }
 
+footer .footer-content a {
+    color: #b8481e;
+    text-decoration: none;
+}
+
+footer .footer-content a:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 768px) {
     .navbar {
         padding: 12px 15px;
@@ -274,8 +286,6 @@ footer {
         width: clamp(100px, 60vw, 200px);
     }
 }
-
-
 
 
  
