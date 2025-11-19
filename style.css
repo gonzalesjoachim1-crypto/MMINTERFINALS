@@ -1,118 +1,38 @@
-
-
-
 @import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&display=swap');
 
 body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
     font-family: "BBH Sans Hegarty", sans-serif;
-    background-image: url('MAINCOVER.jpg');
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-}
-
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: black;
-    color: white;
-    padding: 12px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 20;
-    flex-wrap: wrap;
-    border-bottom: 2px solid #222;
-}
-
-.glow-logo {
-    font-size: 28px;
-    font-weight: 900;
-    letter-spacing: 3px;
-    text-shadow: 0 0 10px #ff3c00, 0 0 20px #ff3c00, 0 0 30px #ff3c00;
-    animation: glowPulse 2.5s infinite ease-in-out;
-}
-
-@keyframes glowPulse {
-    0% { text-shadow: 0 0 10px #ff3c00; opacity: 0.9; }
-    50% { text-shadow: 0 0 25px #ff6a00; opacity: 1; }
-    100% { text-shadow: 0 0 10px #ff3c00; opacity: 0.9; }
-}
-
-.nav-links {
-    display: flex;
-    gap: 25px;
-    list-style: none;
-    transition: all 0.3s ease;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    opacity: 0.6;
-}
-
-.burger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 28px;
-    height: 21px;
-    cursor: pointer;
-}
-
-.burger div {
-    width: 100%;
-    height: 3px;
-    background: white;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-.burger.toggle div:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.burger.toggle div:nth-child(2) {
-    opacity: 0;
-}
-
-.burger.toggle div:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 .hero {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding: 12vh 5%;
     min-height: 100vh;
+    background-image: url('MAINCOVER_desktop.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
 }
 
 .left {
     flex: 1 1 50%;
     max-width: 600px;
+    color: white;
     text-align: left;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: heroFade 1s forwards 0.3s;
 }
 
 .left h1 {
     font-size: clamp(28px, 8vw, 60px);
     font-weight: 900;
-    color: white;
-    margin: 0;
     line-height: 1.2;
 }
 
@@ -127,164 +47,106 @@ body {
     border-radius: 40px;
     font-size: 16px;
     transition: 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: heroFade 1s forwards 0.6s;
 }
 
-.btn:hover {
-    transform: scale(1.05);
+.btn:hover { transform: scale(1.05); }
+
+@keyframes heroFade {
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .right {
     flex: 1 1 50%;
     display: flex;
     justify-content: flex-end;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: heroFade 1s forwards 0.9s;
 }
 
 .right img.bslogo {
     width: clamp(150px, 40vw, 300px);
     filter: drop-shadow(0 0 18px #ff3c00);
-    animation: glowPulse 2.5s infinite;
 }
 
-.about {
-    padding: 80px 20px;
-    background: #111;
-    color: white;
-    text-align: center;
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 40px;
+    z-index: 20;
+    border-bottom: 2px solid #222;
 }
 
-.about h2 {
-    font-size: 36px;
+.glow-logo {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px #ff3c00;
 }
 
-.djs-section {
-    padding: 80px 20px;
-    background: #1a1a1a;
-    color: white;
-    text-align: center;
-}
+.nav-links { display: flex; gap: 25px; list-style: none; }
+.nav-links a { text-decoration: none; color: white; font-size: 16px; }
+.nav-links a:hover { opacity: 0.6; }
 
-.djs-section h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
-}
+.burger { display: none; flex-direction: column; justify-content: space-between; width: 28px; height: 21px; cursor: pointer; }
+.burger div { width: 100%; height: 3px; background: white; border-radius: 2px; transition: 0.3s; }
+.burger.toggle div:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.burger.toggle div:nth-child(2) { opacity: 0; }
+.burger.toggle div:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
 
+.about { padding: 80px 20px; background: #111; color: white; text-align: center; }
+.about h2 { font-size: 36px; }
+
+.djs-section { padding: 80px 20px; background: #1a1a1a; color: white; text-align: center; }
+.djs-section h2 { font-size: 36px; margin-bottom: 40px; }
 .dj-grid {
+    display: grid;
     max-width: 1100px;
     margin: auto;
-    display: grid;
     gap: 25px;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
-
-.dj-card {
-    background: #222;
-    padding: 30px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
+.dj-card { 
+    background: #222; 
+    padding: 30px; 
+    border-radius: 20px; 
+    transition: 0.5s; 
+    opacity: 0; 
+    transform: translateY(20px); 
+}
+.dj-card.visible { 
+    opacity: 1; 
+    transform: translateY(0); 
 }
 
-.dj-card:hover {
-    transform: translateY(-5px);
-    background: #333;
-}
+.cta { padding: 80px 20px; background: #b8481e; text-align: center; color: white; }
 
-.cta {
-    padding: 80px 20px;
-    background: #b8481e;
-    text-align: center;
-    color: white;
-}
-
-footer {
-    background: black;
-    color: white;
-    text-align: center;
-    padding: 25px;
-}
-
-footer .footer-content a {
-    color: #b8481e;
-    text-decoration: none;
-}
-
-footer .footer-content a:hover {
-    text-decoration: underline;
-}
+footer { background: black; color: white; text-align: center; padding: 25px; }
+footer a { color: #b8481e; text-decoration: none; }
+footer a:hover { text-decoration: underline; }
 
 @media (max-width: 768px) {
-    .navbar {
-        padding: 12px 15px;
+    .burger { display: flex; }
+    .nav-links { 
+        position: fixed; top: 0; right: 0; height: 100%; width: 70%; 
+        flex-direction: column; align-items: center; justify-content: center;
+        background: black; transform: translateX(100%); transition: transform 0.3s;
     }
-
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 70%;
-        background: black;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        z-index: 19;
-    }
-
-    .nav-links.nav-active {
-        transform: translateX(0);
-    }
-
-    .burger {
-        display: flex;
-    }
-
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .left {
-        text-align: center;
-    }
-
-    .right {
-        justify-content: center;
-        margin-top: 2rem;
-    }
-
-    .left h1 {
-        font-size: clamp(24px, 7vw, 50px);
-    }
-
-    .btn {
-        padding: 8px 25px;
-        font-size: 14px;
-    }
-
-    .right img.bslogo {
-        width: clamp(120px, 50vw, 250px);
-    }
-}
-
-@media (max-width: 480px) {
-    .nav-links {
-        width: 80%;
-    }
-
-    .left h1 {
-        font-size: clamp(20px, 6vw, 42px);
-    }
-
-    .btn {
-        padding: 6px 20px;
-        font-size: 13px;
-    }
-
-    .right img.bslogo {
-        width: clamp(100px, 60vw, 200px);
-    }
+    .nav-links.nav-active { transform: translateX(0); }
+    .hero { flex-direction: column; text-align: center; background-image: url('MAINCOVER_mobile.jpg'); background-size: cover; background-position: center top; }
+    .left { text-align: center; }
+    .right { justify-content: center; margin-top: 2rem; }
+    .left h1 { font-size: clamp(24px, 7vw, 50px); }
+    .btn { padding: 8px 25px; font-size: 14px; }
+    .right img.bslogo { width: clamp(120px, 50vw, 250px); }
 }
 
 
