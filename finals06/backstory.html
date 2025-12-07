@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BackStory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="fade-in">
+
+<nav class="navbar">
+    <div class="nav-left glow-logo">BACKSTAGE</div>
+    <ul class="nav-links">
+        <li><a href="index.html#hero" class="fade-link">Home</a></li>
+        <li><a href="backstory.html" class="fade-link">BackStory</a></li>
+        <li><a href="index.html#about" class="fade-link">About</a></li>
+        <li><a href="index.html#djs-section" class="fade-link">DJs</a></li>
+    </ul>
+</nav>
+
+<section class="backstory-hero">
+    <h2>BackStory</h2>
+    <p>DJs are like rare dinosaurs in today's music scene. Some talents remain hidden and undiscovered. Backstage exists to give these talented DJs access to the main stage where their abilities can be fully showcased and appreciated. Every amazing performance begins in the backstage, and our platform ensures their talent reaches the audience it deserves.</p>
+    <p>Backstage provides DJs with the technical tools they need to thrive. Artists can upload high-quality mixes, share detailed set information, and gain analytics on audience engagement. The platform also supports networking with clubs and other DJs, offering a structured way to schedule performances, manage tracks, and receive feedback to improve their craft.</p>
+</section>
+
+<footer>
+    <p>© 2025 Backstage. All Rights Reserved.</p>
+    <p>Founded by Joachim Gonzales</p>
+</footer>
+
+<script>
+document.querySelectorAll('.fade-link').forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        document.body.classList.add('fade-out');
+        setTimeout(() => { window.location = link.href; }, 500);
+    });
+});
+</script>
+
+</body>
+</html>
